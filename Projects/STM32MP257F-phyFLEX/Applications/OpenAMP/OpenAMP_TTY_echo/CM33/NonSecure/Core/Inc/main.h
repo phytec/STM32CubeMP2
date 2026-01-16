@@ -27,7 +27,7 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include <stdio.h>
 #include "stm32mp2xx_hal.h"
-#include "stm32mp257f_disco.h"
+#include "stm32mp257f_phyflex.h"
 #include "openamp.h"
 #include "openamp_log.h"
 /* Exported types ------------------------------------------------------------*/

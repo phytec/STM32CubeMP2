@@ -33,7 +33,7 @@
   * @{
   */
 #include "openamp_log.h"
-#include "stm32mp257f_disco.h"
+#include "stm32mp257f_phyflex.h"
 /**
   * @}
   */
