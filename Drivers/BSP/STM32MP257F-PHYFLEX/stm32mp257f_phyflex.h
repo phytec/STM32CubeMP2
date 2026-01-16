@@ -1,8 +1,9 @@
 /**
   ******************************************************************************
-  * @file    stm32mp257f_disco.h
-  * @author  MCD Application Team
-  * @brief   This file contains definitions for STM32MP257F-DK:
+  * @file    stm32mp257f_phyflex.h
+  * @author  ST MCD Application Team
+  *          modified for PHYTEC by c.parant@phytec.fr
+  * @brief   This file contains definitions for STM32MP257F-PHYFLEX:
   *          LEDs
   *          push-buttons
   *          COM ports
@@ -21,16 +22,16 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef STM32MP257F_DK
-#define STM32MP257F_DK
+#ifndef STM32MP257F_PHYFLEX
+#define STM32MP257F_PHYFLEX
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32mp257f_disco_conf.h"
-#include "stm32mp257f_disco_errno.h"
+#include "stm32mp257f_phyflex_conf.h"
+#include "stm32mp257f_phyflex_errno.h"
 #include "res_mgr.h"
 
 #if (USE_BSP_COM_FEATURE > 0)
@@ -49,7 +50,7 @@ extern "C" {
   * @{
   */
 
-/** @addtogroup STM32MP257F_DK
+/** @addtogroup STM32MP257F_PHYFLEX
   * @{
   */
 
@@ -172,24 +173,24 @@ typedef struct
   * @{
   */
 /**
-  * @brief  Define for STM32MP257F DK board
+  * @brief  Define for STM32MP257F PHYFLEX board
   */
-#if !defined (USE_STM32MP257F_DK)
-#define USE_STM32MP257F_DK
-#endif /* USE_STM32MP257F_DK */
+#if !defined (USE_STM32MP257F_PHYFLEX)
+#define USE_STM32MP257F_PHYFLEX
+#endif /* USE_STM32MP257F_PHYFLEX */
 /**
-  * @brief STM32MP257F DK BSP Driver version number VX.Y.Z
+  * @brief STM32MP257F PHYFLEX BSP Driver version number VX.Y.Z
   */
-#define STM32MP257F_DK_BSP_VERSION_MAIN   (0x01U) /*!< [31:24] main version */
-#define STM32MP257F_DK_BSP_VERSION_SUB1   (0x02U) /*!< [23:16] sub1 version */
-#define STM32MP257F_DK_BSP_VERSION_SUB2   (0x00U) /*!< [15:8]  sub2 version */
-#define STM32MP257F_DK_BSP_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */
-#define STM32MP257F_DK_BSP_VERSION        ((STM32MP257F_DK_BSP_VERSION_MAIN << 24)\
-                                           |(STM32MP257F_DK_BSP_VERSION_SUB1 << 16)\
-                                           |(STM32MP257F_DK_BSP_VERSION_SUB2 << 8 )\
-                                           |(STM32MP257F_DK_BSP_VERSION_RC))
-#define STM32MP257F_DK_BSP_BOARD_NAME  "STM32MP257F-DK";
-#define STM32MP257F_DK_BSP_BOARD_ID    "MB1605-A01";
+#define STM32MP257F_PHYFLEX_BSP_VERSION_MAIN   (0x01U) /*!< [31:24] main version */
+#define STM32MP257F_PHYFLEX_BSP_VERSION_SUB1   (0x02U) /*!< [23:16] sub1 version */
+#define STM32MP257F_PHYFLEX_BSP_VERSION_SUB2   (0x00U) /*!< [15:8]  sub2 version */
+#define STM32MP257F_PHYFLEX_BSP_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */
+#define STM32MP257F_PHYFLEX_BSP_VERSION        ((STM32MP257F_PHYFLEX_BSP_VERSION_MAIN << 24)\
+                                           |(STM32MP257F_PHYFLEX_BSP_VERSION_SUB1 << 16)\
+                                           |(STM32MP257F_PHYFLEX_BSP_VERSION_SUB2 << 8 )\
+                                           |(STM32MP257F_PHYFLEX_BSP_VERSION_RC))
+#define STM32MP257F_PHYFLEX_BSP_BOARD_NAME  "STM32MP257F-PHYFLEX";
+#define STM32MP257F_PHYFLEX_BSP_BOARD_ID    "MB1605-A01";
 
 /** @defgroup LOW_LEVEL_LED EVAL LOW LEVEL LED
   * @{
@@ -203,7 +204,7 @@ typedef struct
 #define LED1_GPIO_RIF_RES_TYP_GPIO       RESMGR_RESOURCE_RIF_GPIOH
 #define LED1_GPIO_RIF_RES_NUM_GPIO       RESMGR_GPIO_PIN(4)
 
-#if defined (USE_STM32MP257F_DK)
+#if defined (USE_STM32MP257F_PHYFLEX)
 #define LED2_GPIO_PORT                   GPIOH
 #define LED2_PIN                         GPIO_PIN_5
 #define LED2_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOH_CLK_ENABLE()
@@ -230,10 +231,10 @@ typedef struct
 
 #else
 #error "Please define target board"
-#endif /* USE_STM32MP257F_DK */
+#endif /* USE_STM32MP257F_PHYFLEX */
 #elif defined (CORE_CM0PLUS)
 
-/* Core M0 can't manage LED in DK Board */
+/* Core M0 can't manage LED in PHYFLEX Board */
 #endif /* CORE_CA35 || CORE_CM33 */
 /**
   * @}
@@ -308,7 +309,7 @@ typedef struct
   * @}
   */
 
-/** @defgroup DK_LOW_LEVEL_COM LOW LEVEL COM
+/** @defgroup PHYFLEX_LOW_LEVEL_COM LOW LEVEL COM
   * @{
   */
 #if (USE_BSP_COM_FEATURE > 0)

@@ -1,8 +1,9 @@
 /**
   ******************************************************************************
-  * @file    stm32mp257f_disco_conf_template.h
-  * @author  MCD Application Team
-  * @brief   STM32MP257F_DK board configuration file.
+  * @file    stm32mp257f_phyflex_conf_template.h
+  * @author  ST MCD Application Team
+  *          modified for PHYTEC by c.parant@phytec.fr
+  * @brief   STM32MP257F_PHYFLEX board configuration file.
   ******************************************************************************
   * @attention
   *
@@ -17,8 +18,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef STM32MP257F_DK_CONF_H
-#define STM32MP257F_DK_CONF_H
+#ifndef STM32MP257F_PHYFLEX_CONF_H
+#define STM32MP257F_PHYFLEX_CONF_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -71,4 +72,4 @@ extern "C" {
 }
 #endif
 
-#endif /* STM32MP257F_DK_CONF_H */
+#endif /* STM32MP257F_PHYFLEX_CONF_H */

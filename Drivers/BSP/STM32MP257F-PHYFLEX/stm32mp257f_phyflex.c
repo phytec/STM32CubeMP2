@@ -1,12 +1,13 @@
 /**
   ******************************************************************************
-  * @file    stm32mp257f_disco.c
-  * @author  MCD Application Team
+  * @file    stm32mp257f_phyflex.c
+  * @author  ST MCD Application Team
+  *          modified for PHYTEC by c.parant@phytec.fr
   * @brief   This file provides a set of firmware functions to manage
   *          LEDs
   *          push-buttons
   *          COM ports
-  *          available on STM32MP257F_DK board (MB1605) from STMicroelectronics.
+  *          available on STM32MP257F_PHYFLEX Libra RDK board from PHYTEC.
   ******************************************************************************
   * @attention
   *
@@ -21,13 +22,13 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32mp257f_disco.h"
+#include "stm32mp257f_phyflex.h"
 
 /** @addtogroup BSP
   * @{
   */
 
-/** @addtogroup STM32MP257F_DK
+/** @addtogroup STM32MP257F_PHYFLEX
   * @{
   */
 
@@ -149,7 +150,7 @@ static uint32_t IsComMspCbValid[COMn] = {0};
   */
 int32_t BSP_GetVersion(void)
 {
-  return (int32_t)STM32MP257F_DK_BSP_VERSION;
+  return (int32_t)STM32MP257F_PHYFLEX_BSP_VERSION;
 }
 
 /**
@@ -158,7 +159,7 @@ int32_t BSP_GetVersion(void)
   */
 const uint8_t *BSP_GetBoardName(void)
 {
-  return (uint8_t *)STM32MP257F_DK_BSP_BOARD_NAME;
+  return (uint8_t *)STM32MP257F_PHYFLEX_BSP_BOARD_NAME;
 }
 
 /**
@@ -167,7 +168,7 @@ const uint8_t *BSP_GetBoardName(void)
   */
 const uint8_t *BSP_GetBoardID(void)
 {
-  return (uint8_t *)STM32MP257F_DK_BSP_BOARD_ID;
+  return (uint8_t *)STM32MP257F_PHYFLEX_BSP_BOARD_ID;
 }
 
 #if defined (CORE_CA35) || defined (CORE_CM33)
@@ -895,7 +896,7 @@ int __io_getchar(void)
 #endif /* USE_COM_LOG */
 #endif /* USE_BSP_COM_FEATURE */
 
-/** @defgroup STM32MP257F_DK_LOW_LEVEL_Private_Functions Private Functions
+/** @defgroup STM32MP257F_PHYFLEX_LOW_LEVEL_Private_Functions Private Functions
   * @{
   */
 

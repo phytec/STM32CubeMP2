@@ -1,7 +1,8 @@
 /**
   ******************************************************************************
-  * @file    stm32mp257f_disco_errno.h
-  * @author  MCD Application Team
+  * @file    stm32mp257f_phyflex_errno.h
+  * @author  ST MCD Application Team
+  *          modified for PHYTEC by c.parant@phytec.fr
   * @brief   Error Code.
   *
   ******************************************************************************
@@ -18,8 +19,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef STM32MP257F_DK_ERRNO_H
-#define STM32MP257F_DK_ERRNO_H
+#ifndef STM32MP257F_PHYFLEX_ERRNO_H
+#define STM32MP257F_PHYFLEX_ERRNO_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -66,4 +67,4 @@ extern "C" {
 }
 #endif
 
-#endif /* STM32MP257F_DK_ERRNO_H */
+#endif /* STM32MP257F_PHYFLEX_ERRNO_H */
