@@ -67,11 +67,11 @@ int main(void)
   }
 
   /* Initialize led */
-  BSP_LED_Init(LED3);
+  BSP_LED_Init(LED1);
 
   while (1)
   {
-    BSP_LED_Toggle(LED3);
+    BSP_LED_Toggle(LED1);
     HAL_Delay(300);
   }
 }
@@ -253,8 +253,8 @@ static void MX_IPCC_Init(void)
   */
 void CoproSync_ShutdownCb(IPCC_HandleTypeDef * hipcc, uint32_t ChannelIndex, IPCC_CHANNELDirTypeDef ChannelDir)
 {
-  /* Deinitialize the LED3 */
-  BSP_LED_DeInit(LED3);
+  /* Deinitialize the LED1 */
+  BSP_LED_DeInit(LED1);
 
   /* When ready, notify the remote processor that we can be shut down */
   HAL_IPCC_NotifyCPU(hipcc, ChannelIndex, IPCC_CHANNEL_DIR_RX);

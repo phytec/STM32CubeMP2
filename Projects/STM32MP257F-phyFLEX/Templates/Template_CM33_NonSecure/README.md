@@ -50,7 +50,7 @@ To port a HAL example to the targeted board:
    - Replace file STM32MP2xx_it.c
 
   This projects is configured for STM32MP2xx devices using STM32CubeMP2 HAL and
-  running on the STM32MP257F-EV1 board from STMicroelectronics.
+  running on the STM32MP257F-PHFLEX board from PHYTEC.
 
   At the beginning of the main program the SystemClock_Config()function is called
   to configure the system clock for STM32MP2xx Devices :
@@ -103,7 +103,7 @@ System, HAL template, Clock Configuration, HSE bypass mode,System clock, OsciHAL
 
   - This template runs on STM32MP2xx devices.
 
-  - This template has been tested with STMicroelectronics STM32MP257F-EV1
+  - This template has been tested with PHYTEC STM32MP257F-PHYFLEX
     boards and can be easily tailored to any other supported device
     and development board.
 

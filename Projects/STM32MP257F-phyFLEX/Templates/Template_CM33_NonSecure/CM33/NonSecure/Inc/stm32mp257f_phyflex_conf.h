@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
-  * @file    stm32mp257f_disco_conf.h
+  * @file    stm32mp257f_phyflex_conf.h
   * @author  MCD Application Team
-  * @brief   STM32MP257F_DK board configuration file.
+  * @brief   STM32MP257F_PHYFLEX board configuration file.
   ******************************************************************************
   * @attention
   *
@@ -17,8 +17,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef STM32MP257F_DK_CONF_H
-#define STM32MP257F_DK_CONF_H
+#ifndef STM32MP257F_PHYFLEX_CONF_H
+#define STM32MP257F_PHYFLEX_CONF_H
 
 #ifdef __cplusplus
  extern "C" {
@@ -73,4 +73,4 @@
 }
 #endif
 
-#endif /* STM32MP257F_DK_CONF_H */
+#endif /* STM32MP257F_PHYFLEX_CONF_H */
