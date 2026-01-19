@@ -85,8 +85,8 @@ int main(void)
 #endif
 
   /* Initialize led */
-  BSP_LED_Init(LED3);
-  BSP_LED_On(LED3);
+  BSP_LED_Init(LED1);
+  BSP_LED_On(LED1);
 
   loc_printf ("\r\n Starting OpenAMP application (%s: %s) \r\n", __DATE__, __TIME__);
 
@@ -106,7 +106,7 @@ int main(void)
    */
   while (OPENAMP_check_for_message())
   {
-    BSP_LED_Toggle(LED3);
+    BSP_LED_Toggle(LED1);
     HAL_Delay(1000);
   }
 #endif /* RPMSG_LATE_ATTACH */
@@ -160,7 +160,7 @@ int main(void)
 
     if(counter++ == 200000)
     {
-        BSP_LED_Toggle(LED3);
+        BSP_LED_Toggle(LED1);
         counter = 0;
     }
   }
@@ -224,8 +224,8 @@ void CoproSync_ShutdownCb(IPCC_HandleTypeDef * hipcc, uint32_t ChannelIndex, IPC
   VIRT_UART_DeInit(&huart1);
   BSP_COM_DeInit(COM_VCP_CM33);
   OPENAMP_DeInit();
-  /* Deinitialize the LED3 */
-  BSP_LED_DeInit(LED3);
+  /* Deinitialize the LED1 */
+  BSP_LED_DeInit(LED1);
   /* When ready, notify the remote processor that we can be shut down */
   HAL_IPCC_NotifyCPU(hipcc, ChannelIndex, IPCC_CHANNEL_DIR_RX);
 }
