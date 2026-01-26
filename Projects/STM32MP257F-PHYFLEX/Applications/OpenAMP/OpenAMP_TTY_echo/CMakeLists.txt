@@ -58,7 +58,7 @@ set(OPENAMP_SRC_FILES ${OPENAMP_SRC_FILES}
 						${BASE_DIR}/../../../../../Middlewares/Third_Party/OpenAMP/libmetal/lib/shmem.c 
 						)
 set(BSP_SRC_FILES ${BSP_SRC_FILES}
-						${BASE_DIR}/../../../../../Drivers/BSP/STM32MP257F-PHYFLEX/STM32MP257f_phyflex.c
+						${BASE_DIR}/../../../../../Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_phyflex.c
 						)
 set(UTILS_SRC_FILES ${UTILS_SRC_FILES}
 						${BASE_DIR}/../../../../../Utilities/CoproSync/copro_sync.c
@@ -73,14 +73,14 @@ set(OPENAMP_SRC_GEN_FILES ${OPENAMP_SRC_GEN_FILES}
 						${BASE_DIR}/../../../../../Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_init.c 
 						${BASE_DIR}/../../../../../Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/generic_shmem.c 
 						${BASE_DIR}/../../../../../Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/template/sys.c 
-						)					
+						)
 # Set application source files
 set(APPLICATION_SRC ${APPLICATION_SRC} ${HAL_SRC_FILES} ${OPENAMP_SRC_FILES} ${OPENAMP_SRC_GEN_FILES} ${BSP_SRC_FILES} ${UTILS_SRC_FILES} ${CMSIS_SRC_FILES}
 						${BASE_DIR}/CM33/NonSecure/Core/Src/main.c
 						${BASE_DIR}/CM33/NonSecure/Core/Src/syscalls.c
 						${BASE_DIR}/CM33/NonSecure/Core/Src/stm32mp2xx_hal_msp.c
 						${BASE_DIR}/CM33/NonSecure/Core/Src/stm32mp2xx_it.c
-						${BASE_DIR}/CM33/NonSecure/Core/Src/startup_STM32MP257fxx_m33.s
+						${BASE_DIR}/startup_stm32mp257cxx_m33.s
 						${BASE_DIR}/CM33/NonSecure/OPENAMP/mbox_ipcc.c
 						${BASE_DIR}/CM33/NonSecure/OPENAMP/openamp.c
 						${BASE_DIR}/CM33/NonSecure/OPENAMP/openamp_log.c
