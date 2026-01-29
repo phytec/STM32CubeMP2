@@ -1,7 +1,6 @@
-
 /**
   ******************************************************************************
-  * @file      startup_stm32mp257fxx_m33.s
+  * @file      startup_stm32mp257cxx_m33.s
   * @author    Intropack Team
   * @brief     STM32MP257xx devices Cortex-M33 vector table for GCC toolchain.
   *            This module performs:
@@ -25,12 +24,15 @@
   *
   ******************************************************************************
   */
+
 .syntax unified
 .cpu cortex-m33
 .fpu softvfp
 .thumb
+
 .global g_pfnVectors
 .global Default_Handler
+
 /* start address for the initialization values of the .data section.
 defined in linker script */
 .word   _sidata
@@ -42,6 +44,7 @@ defined in linker script */
 .word   _sbss
 /* end address for the .bss section. defined in linker script */
 .word   _ebss
+
 /**
  * @brief  This is the code that gets called when the processor first
  *          starts execution following a reset event. Only the absolutely
@@ -50,13 +53,16 @@ defined in linker script */
  * @param  None
  * @retval : None
 */
+
     .section    .text.Reset_Handler
     .weak   Reset_Handler
     .type   Reset_Handler, %function
 Reset_Handler:
     ldr   sp, =_estack    /* set stack pointer */
+
 /* Call the clock system initialization function.*/
     bl  SystemInit
+
 /* Copy the data segment initializers from flash to SRAM *
  * Load from _sidata -> _sdata through _edata
  * _sidata has a vma = lma in flash at the end of .text
@@ -74,36 +80,46 @@ Reset_Handler:
  *    index += 1;
  *  }
  */
+
     ldr r0, =_sdata
     ldr r1, =_edata
     ldr r2, =_sidata
     movs r3, #0
     b LoopCopyDataInit
+
 CopyDataInit:
     ldr r4, [r2, r3]
     str r4, [r0, r3]
     adds r3, r3, #4
+
 LoopCopyDataInit:
     adds r4, r0, r3
     cmp r4, r1
     bcc CopyDataInit
+
     ldr r2, =_sbss
     b   LoopFillZerobss
 /* Zero fill the bss segment. */
 FillZerobss:
     movs    r3, #0
     str r3, [r2], #4
+
 LoopFillZerobss:
     ldr r3, = _ebss
     cmp r2, r3
     bcc FillZerobss
+
 /* Call static constructors */
     bl __libc_init_array
+
 /* Call the application entry point */
     bl  main
+
 LoopForever:
     b LoopForever
+
 .size   Reset_Handler, .-Reset_Handler
+
 /**
  * @brief  This is the code that gets called when the processor receives an
  *         unexpected interrupt.  This simply enters an infinite loop, preserving
@@ -126,6 +142,7 @@ Infinite_Loop:
 ******************************************************************************/
     .section    .isr_vectors,"a",%progbits
     .type   g_pfnVectors, %object
+
     .globl  __Vectors
 __Vectors:
 g_pfnVectors:
@@ -472,7 +489,10 @@ g_pfnVectors:
     .word   0
     .word   0
     .word   0
+
     .size   g_pfnVectors, .-g_pfnVectors
+
+
 /*******************************************************************************
  * Provide weak aliases for each Exception handler to the Default_Handler.
  * As they are weak aliases, any function with the same name will override
@@ -486,6 +506,7 @@ g_pfnVectors:
     .weak \handler_name
     .thumb_set \handler_name, Default_Handler
     .endm
+
     def_irq_handler NMI_Handler
     def_irq_handler HardFault_Handler
     def_irq_handler MemManage_Handler
@@ -496,6 +517,7 @@ g_pfnVectors:
     def_irq_handler DebugMon_Handler
     def_irq_handler PendSV_Handler
     def_irq_handler SysTick_Handler
+
     def_irq_handler PVD_IRQHandler
     def_irq_handler PVM_IRQHandler
     def_irq_handler IWDG3_IRQHandler
