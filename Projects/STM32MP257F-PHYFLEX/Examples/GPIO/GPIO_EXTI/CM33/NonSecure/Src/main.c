@@ -84,9 +84,9 @@ int main(void)
        - Low Level Initialization
      */
   /* USER CODE END 1 */
-#ifdef DEBUG
-  while(debug);
-#endif /* DEBUG */
+//#ifdef DEBUG
+//  while(debug);
+//#endif /* DEBUG */
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -122,14 +122,15 @@ int main(void)
   MX_GPIO_Init();
 
   /* USER CODE BEGIN 2 */
-  /* -2- Configure EXTI2 (connected to PC.11 pin) in interrupt mode */
+  /* -2- Configure EXTI2 (connected to PG.14 pin) in interrupt mode */
   MX_EXTI2_Init();
 
   /* Infinite loop */
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  int i=0;
+	  i++;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -304,14 +305,14 @@ static void MX_EXTI2_Init(void)
   GPIO_InitTypeDef   GPIO_InitStruct;
   EXTI_ConfigTypeDef EXTI_ConfigStructure;
 
-  /* Enable GPIOC clock */
-  if (RESMGR_STATUS_ACCESS_OK == ResMgr_Request(RESMGR_RESOURCE_RIF_RCC, RESMGR_RCC_RESOURCE(92)))
+  /* Enable GPIOG clock */
+  if (RESMGR_STATUS_ACCESS_OK == ResMgr_Request(RESMGR_RESOURCE_RIF_RCC, RESMGR_RCC_RESOURCE(96)))
   {
 	  BUTTON_USER2_GPIO_CLK_ENABLE();
   }
 
-  /* Acquire GPIOC11 using Resource manager */
-  if (RESMGR_STATUS_ACCESS_OK != ResMgr_Request(RESMGR_RESOURCE_RIF_GPIOC, RESMGR_GPIO_PIN(11)))
+  /* Acquire GPIOG14 using Resource manager */
+  if (RESMGR_STATUS_ACCESS_OK != ResMgr_Request(RESMGR_RESOURCE_RIF_GPIOG, RESMGR_GPIO_PIN(14)))
   {
 	  Error_Handler();
   }
@@ -323,10 +324,10 @@ static void MX_EXTI2_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(BUTTON_USER2_GPIO_PORT, &GPIO_InitStruct);
 
-  /* Set configuration except Interrupt and Event mask of Exti line 11*/
+  /* Set configuration except Interrupt and Event mask of Exti line 14*/
   EXTI_ConfigStructure.Line = BUTTON_USER2_EXTI_LINE;
   EXTI_ConfigStructure.Trigger = EXTI_TRIGGER_FALLING;
-  EXTI_ConfigStructure.GPIOSel = EXTI_GPIOC;
+  EXTI_ConfigStructure.GPIOSel = EXTI_GPIOG;
   EXTI_ConfigStructure.Mode = EXTI_MODE_INTERRUPT;
   HAL_EXTI_SetConfigLine(&hexti, &EXTI_ConfigStructure);
 
@@ -348,9 +349,9 @@ static void MX_EXTI2_DeInit(void)
 {
 	HAL_GPIO_DeInit(BUTTON_USER2_GPIO_PORT, BUTTON_USER2_PIN);
 
-	ResMgr_Release(RESMGR_RESOURCE_RIF_GPIOG, RESMGR_GPIO_PIN(8));
+	ResMgr_Release(RESMGR_RESOURCE_RIF_GPIOG, RESMGR_GPIO_PIN(14));
 
-	HAL_NVIC_DisableIRQ(EXTI2_8_IRQn);
+	HAL_NVIC_DisableIRQ(EXTI2_14_IRQn);
 }
 
 /**
