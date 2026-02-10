@@ -121,9 +121,9 @@
 			<locationURI>PARENT-3-PROJECT_LOC/CM0PLUS/NonSecure/Core/Src/syscalls.c</locationURI>
 		</link>
 		<link>
-			<name>Drivers/BSP/STM32MP257F-DK/stm32mp257f_disco.c</name>
+			<name>Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_phyflex.c</name>
 			<type>1</type>
-			<locationURI>PARENT-7-PROJECT_LOC/Drivers/BSP/STM32MP257F-DK/stm32mp257f_disco.c</locationURI>
+			<locationURI>PARENT-7-PROJECT_LOC/Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_phyflex.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

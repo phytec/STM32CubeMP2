@@ -84,7 +84,7 @@ The actual implementation adds a delay (using the LPTIM) between the PWR_ON rise
 ## Hardware and Software Environment to Enable the Low Power Workaround
 
 ### Hardware
-- Link PWR_ON to the GPIO PZ9 (for example, on the STM32MP257F-DK, link resistor R61 to mkB.INT).
+- Link PWR_ON to the GPIO PZ9 (for example, on the STM32MP257F-PHYFLEX, link resistor R61 to mkB.INT).
 
 ### Software
 - The main CPU must trigger an IRQ 25 in the Cortex-M0+ using the EXTI2 SWIER (line 60) *just* before entering low power.
@@ -121,4 +121,4 @@ In your Cortex-M0+ firmware, include `lowpower_wa.h` and call `lowpower_wa_Init(
 ## Hardware and Software Environment
 
 - This application runs on M0Plus.
-- This application has been tested with STMicroelectronics on STM32MP257F-DK board and can be easily tailored to any other supported devices and development boards.
+- This application has been tested on STM32MP257F-PHYFLEX PHYTEC board and can be easily tailored to any other supported devices and development boards.

@@ -23,7 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32mp2xx_hal.h"
-#include "stm32mp257f_disco.h"
+#include "stm32mp257f_phyflex.h"
 #include "lowpower_wa.h"
 
 /* Exported constants --------------------------------------------------------*/

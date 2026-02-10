@@ -111,7 +111,7 @@ rise and the WFI to gain execution time.
 @par Hardware and Software environment to enable the low power workaround
 
 Hardware:
-- Link PWR_ON to the GPIO PZ9 (for example, on the STM32MP257F-DK, link
+- Link PWR_ON to the GPIO PZ9 (for example, on the STM32MP257F-PHYFLEX, link
 resistor R61 to mkB.INT).
 
 Software:

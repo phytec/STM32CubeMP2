@@ -15,13 +15,13 @@ message("-- Starting Cmake compilation ${LINKER_SCRIPT} ${CMAKE_BINARY_DIR}")
 set(DEFINITIONS "-DSTM32MP257Fxx \
 				-DCORE_CM0PLUS \
 				-DSTM32MP257F_DISCO \
-				-DSTM32MP25xx_DK \
+				-DSTM32MP25xx_PHYFLEX \
 				-DSTM32MP25xxxx \
 				-DUSE_HAL_DRIVER \
 				-DUSE_FULL_LL_DRIVER \
 				-DLOWPOWER_WA_STANDBY1 \
 				-DSTM32MP2 \
-				-DUSE_STM32MP257F_DK")
+				-DUSE_STM32MP257F_PHYFLEX")
 
 set(TARGET CM0PLUS_DEMO_NonSecure)
 
@@ -42,7 +42,7 @@ set(HAL_SRC_FILES ${HAL_SRC_FILES}
 						)
 
 set(BSP_SRC_FILES ${BSP_SRC_FILES}
-						${BASE_DIR}/../../../../Drivers/BSP/STM32MP257F-DK/stm32mp257f_disco.c  
+						${BASE_DIR}/../../../../Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_phyflex.c  
 						)
 set(UTILS_SRC_FILES ${UTILS_SRC_FILES}
 						${BASE_DIR}/../../../../Utilities/ResourcesManager/res_mgr.c 
@@ -65,7 +65,7 @@ include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/CMSIS/De
 include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/CMSIS/Include )
 include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Utilities/CoproSync )
 include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Utilities/ResourcesManager )
-include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/BSP/STM32MP257F-DK )
+include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/BSP/STM32MP257F-PHYFLEX )
 include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/STM32MP2xx_HAL_Driver/Inc )
 include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/STM32MP2xx_HAL_Driver/Inc/Legacy )
 include_directories(APPLICATION_INCLUDE ${BASE_DIR}/../../../../Drivers/CMSIS/Device/ST/STM32MP2xx/Include/Templates_TZ )
