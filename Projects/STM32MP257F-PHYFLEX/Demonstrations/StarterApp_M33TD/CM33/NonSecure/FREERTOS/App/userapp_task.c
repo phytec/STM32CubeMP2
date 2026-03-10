@@ -74,7 +74,7 @@ void UserAppTask_DeInit(void)
 /* Private functions ---------------------------------------------------------*/
 /**
   * @brief  Main function for the User Application Task.
-  *         Toggles LED3 every 500ms.
+  *         Toggles LED1 every 500ms.
   * @param  argument: Not used.
   * @retval None
   */
@@ -83,7 +83,7 @@ static void UserAppTask(void *argument)
     (void)argument;
     // Starter: Blink LED
     for (;;) {
-        BSP_LED_Toggle(LED3);
+        BSP_LED_Toggle(LED1);
         osDelay(500);
     }
 }

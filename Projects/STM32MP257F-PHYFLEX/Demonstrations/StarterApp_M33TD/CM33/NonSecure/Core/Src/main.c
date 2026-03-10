@@ -265,7 +265,7 @@ void Error_Handler(void)
 {
   while(1)
   {
-    BSP_LED_Toggle(LED3);
+    BSP_LED_Toggle(LED1);
     HAL_Delay(100);
   }
 }
