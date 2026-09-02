@@ -10,7 +10,7 @@ include(util/cortex-m33-stm32mp2.cmake)
 include(util/color.cmake)
 message("-- Starting Cmake compilation ${LINKER_SCRIPT} ${CMAKE_BINARY_DIR}")
 
-set(DEFINITIONS "-DSTM32MP257Fxx \
+set(DEFINITIONS "-DSTM32MP257Cxx \
 				-DSTM32MP25xxxx \
 				-DLOGLEVEL=3 \
 				-D__LOG_UART_IO_ \

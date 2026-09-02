@@ -36126,7 +36126,8 @@ typedef struct
 #define LVDS_IPIDR_IDR_29                                      (0x20000000UL << LVDS_IPIDR_IDR_Pos)                              /*!< 0x20000000 */
 #define LVDS_IPIDR_IDR_30                                      (0x40000000UL << LVDS_IPIDR_IDR_Pos)                              /*!< 0x40000000 */
 #define LVDS_IPIDR_IDR_31                                      (0x80000000UL << LVDS_IPIDR_IDR_Pos)                              /*!< 0x80000000 */
-
+/*******************  Bits definition for TAMP_CONFIG_PHYTEC register  *************/
+#define TAMP_CONFIG_PHYTEC             U(0x1D0)
 /******************  Bit definition for LVDS_SIDR register  *******************/
 #define LVDS_SIDR_SID_Pos                                      (0U)
 #define LVDS_SIDR_SID_Msk                                      (0xFFFFFFFFUL << LVDS_SIDR_SID_Pos)                               /*!< 0xFFFFFFFF */

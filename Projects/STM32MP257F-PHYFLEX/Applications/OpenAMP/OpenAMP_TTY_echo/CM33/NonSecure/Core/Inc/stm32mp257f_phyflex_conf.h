@@ -27,41 +27,34 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32mp2xx_hal.h"
 
-/* COM define */
+/* COM usage define */
 #define USE_COM_LOG                         1U
 #define USE_BSP_COM_FEATURE                 1U
 
 /* LCD controllers defines */
-#define USE_LCD_CTRL_OTM8009A               0U
-#define USE_LCD_CTRL_ADV7533                0U
-
-#define LCD_LAYER_0_ADDRESS                 0xC0000000U
-#define LCD_LAYER_1_ADDRESS                 0xC0200000U
-
-#define USE_DMA2D_TO_FILL_RGB_RECT          0U
-/* Camera sensors defines */
-#define USE_CAMERA_SENSOR_OV5640            0U
-#define USE_CAMERA_SENSOR_OV9655            0U
-
-/* SD interface defines */
-#define USE_SD_BUS_WIDE_4B                  0U
+#define LCD_LAYER_0_ADDRESS                 0xD0000000U
+#define LCD_LAYER_1_ADDRESS                 0xD0200000U
 
 /* Audio codecs defines */
-#define USE_AUDIO_CODEC_WM8994              0U
+#define USE_AUDIO_CODEC_WM8994              1U
+#define DEFAULT_AUDIO_IN_BUFFER_SIZE        2048U
+#define USE_BSP_CPU_CACHE_MAINTENANCE       1U
 
 /* TS supported features defines */
-#define USE_TS_GESTURE                      0U
-#define USE_TS_MULTI_TOUCH                  0U
+#define TS_TOUCH_NBR                        1U
+#define USE_TS3510_TS_CTRL                  1U
+#define USE_EXC7200_TS_CTRL                 1U
 
-/* Default TS touch number */
-#define TS_TOUCH_NBR                        2U
+/* Default EEPROM max trials */
+#define EEPROM_MAX_TRIALS                   3000U
 
 /* IRQ priorities */
-#define BSP_BUTTON_USER_IT_PRIORITY         15U
-#define BSP_BUTTON_TAMPER_IT_PRIORITY		15U
+#define BSP_SRAM_IT_PRIORITY                15U
 #define BSP_SDRAM_IT_PRIORITY               15U
-#define BSP_CAMERA_IT_PRIORITY              15U
+#define BSP_IOEXPANDER_IT_PRIORITY          15U
+#define BSP_BUTTON_USER_IT_PRIORITY         15U
 #define BSP_BUTTON_WAKEUP_IT_PRIORITY       15U
+#define BSP_BUTTON_TAMPER_IT_PRIORITY       15U
 #define BSP_AUDIO_OUT_IT_PRIORITY           14U
 #define BSP_AUDIO_IN_IT_PRIORITY            15U
 #define BSP_SD_IT_PRIORITY                  14U

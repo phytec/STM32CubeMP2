@@ -41,20 +41,14 @@ _estack = ORIGIN(RAM) + LENGTH(RAM);	/* end of "RAM" Ram type memory */
 _Min_Heap_Size = 0x200;	/* required amount of heap  */
 _Min_Stack_Size = 0x400;	/* required amount of stack */
 
-/* Memories definition */
+/* Linker script to configure memory regions. */
+
 MEMORY
 {
-  NS_VECTOR_TBL (xrw)   : ORIGIN = 0x80100000,	LENGTH = 0x00000600
-  FLASH         (rx)    : ORIGIN = 0x80100600,  LENGTH = 8M - LENGTH(NS_VECTOR_TBL)
-  ROM           (rx)   : ORIGIN = 0x80A00000,  LENGTH = 4M
-  RAM           (rwx)   : ORIGIN = 0x80E00000,  LENGTH = 4M
-  VIRTIO_SHMEM  (rw)    : ORIGIN = 0x812F8000,	LENGTH = 32K
-  IPC_SHMEM     (rw)    : ORIGIN = 0x81200000,	LENGTH = 8M - LENGTH(VIRTIO_SHMEM) 
+  NS_VECTOR_TBL (xrw)   : ORIGIN = 0x0A061000,	LENGTH = 0x00000600
+  FLASH         (rx)    : ORIGIN = 0x0A061600,  LENGTH = 4K - LENGTH(NS_VECTOR_TBL)
+  RAM           (rwx)   : ORIGIN = 0x0A062000,  LENGTH = 52K
 }
-
- /* Symbols needed for OpenAMP to enable rpmsg */
-__OPENAMP_region_start__  = ORIGIN(VIRTIO_SHMEM);
-__OPENAMP_region_end__ = ORIGIN(VIRTIO_SHMEM)+LENGTH(VIRTIO_SHMEM);
 
 /* Library configurations */
 GROUP(libgcc.a libc.a libm.a libnosys.a)
@@ -73,13 +67,6 @@ SECTIONS
         . = ALIGN(4);
     } >NS_VECTOR_TBL
 
-    .resource_table :
-    {
-        . = ALIGN(4);
-        KEEP (*(.resource_table*))
-        . = ALIGN(4);
-    } >IPC_SHMEM
-
   /* The program code and other data into "RAM" Ram type memory */
   .text :
   {
@@ -94,7 +81,7 @@ SECTIONS
     KEEP (*(.fini))
 
     . = ALIGN(8);
-  } >ROM
+  } >RAM
 
   /* Constant data into "RAM" Ram type memory */
   .rodata :
@@ -103,7 +90,7 @@ SECTIONS
     *(.rodata)         /* .rodata sections (constants, strings, etc.) */
     *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
     . = ALIGN(8);
-  } >ROM
+  } >RAM
 
   .ARM.extab   : {
     . = ALIGN(8);

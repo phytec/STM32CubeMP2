@@ -13723,6 +13723,9 @@ typedef struct
 #define TAMP_RCIDCFGR_CID_Msk       (0xFUL << TAMP_RCIDCFGR_CID_Pos)                     /*!< 0x000000F0U */
 #define TAMP_RCIDCFGR_CID           TAMP_RCIDCFGR_CID_Msk
 
+/*******************  Bits definition for TAMP_CONFIG_PHYTEC register  *************/
+#define TAMP_CONFIG_PHYTEC             U(0x1D0)
+
 /********************  Bits definition for TAMP_BKP0R register  ***************/
 #define TAMP_BKP0R_Pos               (0U)
 #define TAMP_BKP0R_Msk               (0xFFFFFFFFUL << TAMP_BKP0R_Pos)                   /*!< 0xFFFFFFFFU */

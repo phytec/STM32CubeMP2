@@ -31,9 +31,19 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>stm32mp2xx_DDR_m33_ns.ld</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/CMSIS/Device/ST/STM32MP2xx/Source/Templates/gcc/linker/stm32mp2xx_DDR_m33_ns.ld</locationURI>
+		</link>
+		<link>
 			<name>Doc/README.md</name>
 			<type>1</type>
 			<locationURI>PARENT-3-PROJECT_LOC/README.md</locationURI>
+		</link>
+		<link>
+			<name>Utilities/copro_sync.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Utilities/CoproSync/copro_sync.c</locationURI>
 		</link>
 		<link>
 			<name>Utilities/res_mgr.c</name>
@@ -43,7 +53,7 @@
 		<link>
 			<name>Application/Startup/startup_stm32mp257cxx_m33.s</name>
 			<type>1</type>
-			<locationURI>PARENT-8-PROJECT_LOC/Drivers/CMSIS/Device/ST/STM32MP2xx/Source/Templates/gcc/startup_stm32mp257cxx_m33.s</locationURI>
+			<locationURI>PARENT-3-PROJECT_LOC/startup_stm32mp257cxx_m33.s</locationURI>
 		</link>
 		<link>
 			<name>Drivers/CMSIS/system_stm32mp2xx_m33_ns.c</name>
@@ -59,6 +69,11 @@
 			<name>Drivers/STM32MP2xx_HAL_Driver/stm32mp2xx_hal_cortex.c</name>
 			<type>1</type>
 			<locationURI>PARENT-8-PROJECT_LOC/Drivers/STM32MP2xx_HAL_Driver/Src/stm32mp2xx_hal_cortex.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/STM32MP2xx_HAL_Driver/stm32mp2xx_hal_dcache.c</name>
+			<type>1</type>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/STM32MP2xx_HAL_Driver/Src/stm32mp2xx_hal_dcache.c</locationURI>
 		</link>
 		<link>
 			<name>Drivers/STM32MP2xx_HAL_Driver/stm32mp2xx_hal_dma.c</name>
@@ -161,9 +176,9 @@
 			<locationURI>PARENT-3-PROJECT_LOC/CM33/NonSecure/OPENAMP/rsc_table.c</locationURI>
 		</link>
 		<link>
-			<name>Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_phyflex.c</name>
+			<name>Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_eval.c</name>
 			<type>1</type>
-			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_phyflex.c</locationURI>
+			<locationURI>PARENT-8-PROJECT_LOC/Drivers/BSP/STM32MP257F-PHYFLEX/stm32mp257f_eval.c</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/OpenAMP/libmetal/device.c</name>
@@ -279,16 +294,6 @@
 			<name>Middlewares/OpenAMP/libmetal/generic/template/sys.c</name>
 			<type>1</type>
 			<locationURI>PARENT-8-PROJECT_LOC/Middlewares/Third_Party/OpenAMP/libmetal/lib/system/generic/template/sys.c</locationURI>
-		</link>
-		<link>
-			<name>Utilities/copro_sync.c</name>
-			<type>1</type>
-			<locationURI>PARENT-8-PROJECT_LOC/Utilities/CoproSync/copro_sync.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/STM32MP2xx_HAL_Driver/stm32mp2xx_hal_ipcc.c</name>
-			<type>1</type>
-			<locationURI>PARENT-8-PROJECT_LOC/Drivers/STM32MP2xx_HAL_Driver/Src/stm32mp2xx_hal_ipcc.c</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
