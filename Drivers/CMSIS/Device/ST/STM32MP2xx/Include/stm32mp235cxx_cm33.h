@@ -39940,7 +39940,8 @@ typedef struct
 #define PWR_CR12_VDDGPURDY_Msk                 (0x1UL << PWR_CR12_VDDGPURDY_Pos)
 #define PWR_CR12_VDDGPURDY                     PWR_CR12_VDDGPURDY_Msk  /*!< VDDGPU ready */
 
-
+/*******************  Bits definition for TAMP_CONFIG_PHYTEC register  *************/
+#define TAMP_CONFIG_PHYTEC             U(0x1D0)
 
 /* Bit fields for PWR_BDCR1 register */
 #define PWR_BDCR1_DBD3P_Pos                    (0U)
